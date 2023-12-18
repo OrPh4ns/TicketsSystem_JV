@@ -12,6 +12,9 @@ public class TicketReplies
     @Column(name = "id", nullable = false)
     private int id;
 
+    @Column(name = "text")
+    private String text;
+
     @ManyToOne
     @JoinColumn(name = "ticket", nullable = false)
     private Ticket ticket;

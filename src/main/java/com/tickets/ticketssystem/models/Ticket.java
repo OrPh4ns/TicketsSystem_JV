@@ -20,16 +20,4 @@ public class Ticket {
     @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
     private List<TicketReplies> replies;
 
-    public void setId(Integer id)
-    {
-        this.id = id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
 }
