@@ -1,5 +1,4 @@
 package com.tickets.ticketssystem.models;
-
 import jakarta.persistence.*;
 import lombok.Data;
 

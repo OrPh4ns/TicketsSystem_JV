@@ -1,29 +1,38 @@
 package com.tickets.ticketssystem.controllers;
 import com.tickets.ticketssystem.models.Ticket;
+import com.tickets.ticketssystem.repositories.TicketRepository;
 import com.tickets.ticketssystem.services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
+@RequestMapping("tickets")
 public class TicketsController
 {
-
     @Autowired()
     TicketService ticketService;
+    @Autowired
+    private TicketRepository ticketRepository;
 
-    /**
-     */
-    @GetMapping("/")
+    @GetMapping("")
     public List<Ticket> getAllTickets()
     {
         return ticketService.findAll();
     }
 
-    @GetMapping("/ticket/{id}")
+    @GetMapping("{id}")
     public Ticket getTicketById(@PathVariable int id) {
         return ticketService.getById(id);
     }
+
+    @GetMapping("delete/{id}")
+    public boolean deleteById(@PathVariable Long id)
+    {
+        return ticketService.deleteById(id);
+    }
+
+
+
 }
