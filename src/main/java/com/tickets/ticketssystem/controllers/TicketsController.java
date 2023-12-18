@@ -16,13 +16,6 @@ public class TicketsController
     @Autowired
     private TicketRepository ticketRepository;
 
-//    @GetMapping("")
-//    public List<Ticket>
-//    getAllTickets()
-//    {
-//        return ticketService.findAll();
-//    }
-
     @GetMapping("")
     public List<Ticket> getAllTickets() {
         return ticketService.findAll();
@@ -31,6 +24,12 @@ public class TicketsController
     @GetMapping("{id}")
     public Ticket getTicketById(@PathVariable int id) {
         return ticketService.getById(id);
+    }
+
+    @PostMapping("create")
+    public Ticket createTicket(@RequestBody Ticket ticket) {
+        return ticketRepository.save(ticket);
+        //return ticketService.save(ticket);
     }
 
     @GetMapping("delete/{id}")

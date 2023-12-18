@@ -6,9 +6,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TicketRepository extends CrudRepository<Ticket, Long> {
+public interface TicketRepository extends JpaRepository<Ticket, Long> {
     @Override
     List<Ticket> findAll();
     Ticket getById(int id);
     void deleteById(Long id);
+//    void create(Ticket ticket);
 }

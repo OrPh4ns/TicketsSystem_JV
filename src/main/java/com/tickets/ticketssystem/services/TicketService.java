@@ -26,8 +26,9 @@ public class TicketService {
         return ticketRepository.getById(id);
     }
 
-    public Ticket save(Ticket ticket) {
-        return ticketRepository.save(ticket);
+    public String create(Ticket ticket) {
+//        ticketRepository.create(ticket);
+        return "Success created";
     }
 
     public boolean deleteById(Long id) {
