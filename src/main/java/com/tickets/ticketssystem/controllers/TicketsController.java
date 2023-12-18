@@ -16,9 +16,15 @@ public class TicketsController
     @Autowired
     private TicketRepository ticketRepository;
 
+//    @GetMapping("")
+//    public List<Ticket>
+//    getAllTickets()
+//    {
+//        return ticketService.findAll();
+//    }
+
     @GetMapping("")
-    public List<Ticket> getAllTickets()
-    {
+    public List<Ticket> getAllTickets() {
         return ticketService.findAll();
     }
 
