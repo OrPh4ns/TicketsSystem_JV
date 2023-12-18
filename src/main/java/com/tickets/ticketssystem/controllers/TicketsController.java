@@ -23,7 +23,7 @@ public class TicketsController
     }
 
     @GetMapping("/ticket/{id}")
-    public List<Ticket> getTicketById(@PathVariable int id) {
+    public Ticket getTicketById(@PathVariable int id) {
         return ticketService.getById(id);
     }
 }

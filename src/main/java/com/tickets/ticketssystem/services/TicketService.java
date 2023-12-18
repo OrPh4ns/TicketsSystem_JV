@@ -24,7 +24,7 @@ public class TicketService {
      * @param id
      * @return ticket
      */
-    public List<Ticket> getById(int id)
+    public Ticket getById(int id)
     {
         return ticketRepository.getById(id);
     }
