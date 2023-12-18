@@ -1,6 +1,7 @@
 package com.tickets.ticketssystem.services;
 
 import com.tickets.ticketssystem.models.Ticket;
+import com.tickets.ticketssystem.models.TicketReplies;
 import com.tickets.ticketssystem.repositories.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,18 @@ public class TicketService {
         return ticketRepository.findAll();
     }
 
-    public Optional<Ticket> findById(Long id) {
+    /**
+     * @param id
+     * @return ticket
+     */
+    public List<Ticket> getById(int id)
+    {
+        return ticketRepository.getById(id);
+    }
+
+
+    public Optional<Ticket> findById(Long id)
+    {
         return ticketRepository.findById(id);
     }
 
@@ -29,10 +41,6 @@ public class TicketService {
 
     public void deleteById(Long id) {
         ticketRepository.deleteById(id);
-    }
-
-    public List<Ticket> findByTitle(String title) {
-        return ticketRepository.findByTitle(title);
     }
 
 }

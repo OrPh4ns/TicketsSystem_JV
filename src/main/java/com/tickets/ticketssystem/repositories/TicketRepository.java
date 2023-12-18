@@ -1,5 +1,6 @@
 package com.tickets.ticketssystem.repositories;
 import com.tickets.ticketssystem.models.Ticket;
+import com.tickets.ticketssystem.models.TicketReplies;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;
@@ -8,5 +9,5 @@ import java.util.List;
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
 
     List<Ticket> findAll();
-    List<Ticket> findByTitle(String title);
+    List<Ticket> getById(int id);
 }

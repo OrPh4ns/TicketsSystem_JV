@@ -3,6 +3,8 @@ package com.tickets.ticketssystem.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tickets")
 @Data
@@ -15,8 +17,11 @@ public class Ticket {
     private String title;
     @Column(name = "text")
     private String text;
+    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
+    private List<TicketReplies> replies;
 
-    public void setId(Integer id) {
+    public void setId(Integer id)
+    {
         this.id = id;
     }
 
