@@ -29,7 +29,6 @@ public class TicketsController
     @PostMapping("create")
     public Ticket createTicket(@RequestBody Ticket ticket) {
         return ticketRepository.save(ticket);
-        //return ticketService.save(ticket);
     }
 
     @GetMapping("delete/{id}")
