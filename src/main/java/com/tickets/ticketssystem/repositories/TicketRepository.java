@@ -11,5 +11,4 @@ public interface TicketRepository extends JpaRepository<Ticket, Long> {
     List<Ticket> findAll();
     Ticket getById(int id);
     void deleteById(Long id);
-//    void create(Ticket ticket);
 }

@@ -10,8 +10,9 @@ import java.util.List;
 @Data
 public class Ticket {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
 
     @Column(name = "title")
     private String title;
@@ -19,5 +20,13 @@ public class Ticket {
     private String text;
     @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
     private List<TicketReplies> replies;
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
 
 }
